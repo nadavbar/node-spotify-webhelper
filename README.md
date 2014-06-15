@@ -9,11 +9,11 @@ API:
 
 This module exposes the SpotifyWebHelper object, which exposes  the following methods:
 
- - getStatus(cb : function(err, res)) -  Retrieving currently played song information.
- - pause(cb : function(err, res)) - pause currently playing song
- - unpause(cb : function(err, res)) - unpause currently playing song
- - play(spotifyurl : string, cb : function(err, res)) - play the given spotify url
- - Constructor(port : number (optional)) - Creates a new SpotifyWebHelper object, 
+ - **getStatus (cb : function(err, res))** -  get current status information (name of song/artist which is currently playing, etc..)
+ - **pause (cb : function(err, res))** - pause currently playing song
+ - **unpause (cb : function(err, res))** - unpause currently playing song
+ - **play (spotifyurl : string, cb : function(err, res))** - play the given spotify url
+ - **Constructor (port : number (optional))** - Creates a new SpotifyWebHelper object, 
    default port to communicate with the SpotifyWebHelper is 4370, other port can be specified when creating the object.
 
 Example:
