@@ -34,7 +34,9 @@ function getJson(url, params, headers, cb) {
     if (params)
         url += '?' + qs.stringify(params)
     
-    request({ 'url': url, 'headers': headers}, function (err, req, body) {
+    // rejectUnauthorized:false should be ok here since we are working with localhost
+    // this fixes the UNABLE_TO_VERIFY_LEAF_SIGNATURE error
+    request({ 'url': url, 'headers': headers, 'rejectUnauthorized' : false}, function (err, req, body) {
         if (err) {
             return cb(err);
         }
