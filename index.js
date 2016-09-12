@@ -289,6 +289,15 @@ function SpotifyWebHelper(opts) {
 
       spotifyJsonRequest(this, '/remote/play.json', params, cb);
     }
+
+    this.getVersion = function(cb) {
+        var url = generateSpotifyUrl('/service/version.json');
+        return getJson(url, { 'service': 'remote' }, ORIGIN_HEADER, cb)
+    }
+
+    this.getLocalHostname = function() {
+      return generateRandomLocalHostName();
+    }
 }
 
 module.exports.SpotifyWebHelper = SpotifyWebHelper;
