@@ -16,6 +16,8 @@ var DEFAULT_PORT = 4370;
 var DEFAULT_RETURN_ON = ['login', 'logout', 'play', 'pause', 'error', 'ap']
 var DEFAULT_RETURN_AFTER = 1
 var ORIGIN_HEADER = { 'Origin': 'https://open.spotify.com' }
+var FAKE_USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36';
+
 
 function getJson(url, params, headers, cb) {
     if (params instanceof Function) {
@@ -33,6 +35,8 @@ function getJson(url, params, headers, cb) {
     cb = cb || function () { };
     if (params)
         url += '?' + qs.stringify(params)
+    
+    headers['User-Agent'] = FAKE_USER_AGENT;
     
     // rejectUnauthorized:false should be ok here since we are working with localhost
     // this fixes the UNABLE_TO_VERIFY_LEAF_SIGNATURE error
