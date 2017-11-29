@@ -13,8 +13,8 @@ This module exposes the SpotifyWebHelper object, which exposes  the following me
  - **pause (cb : function(err, res))** - pause currently playing song
  - **unpause (cb : function(err, res))** - unpause currently playing song
  - **play (spotifyurl : string, cb : function(err, res))** - play the given spotify url
- - **Constructor (port : number (optional))** - Creates a new SpotifyWebHelper object, 
-   default port to communicate with the SpotifyWebHelper is 4370, other port can be specified when creating the object.
+ - **Constructor ({port : number (optional), protocol : string (optional)})** - Creates a new SpotifyWebHelper object, 
+    The default port is set to 4381 as well as a default protocol of http, in some cases, you might want to use 4370 and https instead.
 
 Example:
 ```javascript
